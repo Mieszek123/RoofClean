@@ -153,22 +153,21 @@
     </nav>
 
     <!--HERO-->
-    <section
-      class="h-[calc(100vh-4rem)] w-full relative flex items-center justify-center"
-      style="
-        background-image: url(&quot;img/hero_image.webp&quot;);
-        background-size: cover;
-        background-position: center;
-      "
-    >
+    <section class="h-[calc(100vh-4rem)] w-full relative flex items-center justify-center">
+
+      <img
+        src="img/hero_image.webp"
+        alt=""
+        fetchpriority="high"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
       <!-- overlay -->
       <div class="absolute inset-0 bg-black/60"></div>
 
       <!-- content -->
       <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
-        <p
-          class="hero-fade d1 text-sm uppercase tracking-widest text-sky-400 font-medium mb-[-10px]"
-        >
+        <p class="hero-fade d1 text-sm uppercase tracking-widest text-sky-400 font-medium mb-[-10px]">
           Professional Service
         </p>
         <h1 class="hero-fade d2 text-5xl md:text-7xl font-bold leading-tight">
@@ -180,13 +179,13 @@
           zanim będzie za późno.
         </p>
         <div class="hero-fade d4 flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <a
+          
             href="#"
             class="bg-sky-400 hover:bg-sky-300 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
           >
             Get a Free Quote
           </a>
-          <a
+          
             href="#"
             class="border border-white/50 hover:border-white text-white hover:bg-white/10 font-medium px-8 py-3 rounded-full transition-all duration-300"
           >
@@ -194,6 +193,7 @@
           </a>
         </div>
       </div>
+
     </section>
 
     <!--SERVICES-->
@@ -223,6 +223,7 @@
               src="img/roof_clean.webp"
               alt="Czyszczenie dachu"
               width="600"
+              loading="lazy"
               height="700"
               class="w-full h-full object-cover"
             />
@@ -244,6 +245,7 @@
             <img
               src="img/roof_impregnacja.webp"
               alt="Impregnacja dachu"
+              loading="lazy"
               width="600"
               height="340"
               class="w-full h-full object-cover"
@@ -264,6 +266,7 @@
             <img
               src="img//mos.webp"
               alt="Odgrzybianie dachu"
+              loading="lazy"
               width="600"
               height="340"
               class="w-full h-full object-cover"
@@ -520,6 +523,7 @@
             <div class="absolute bottom-0 left-0 w-3/4 h-80 rounded-2xl overflow-hidden shadow-lg">
             <img
                 src="img/roof_team.webp"
+                loading="lazy"
                 alt="zespół czyszczący dach"
                 width="450"
                 height="320"
@@ -532,6 +536,7 @@
             <img
                 src="img/roof_water.webp"
                 alt="Czyszczenie dachu z bliska"
+                loading="lazy"
                 width="280"
                 height="224"
                 class="w-full h-full object-cover"

@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CleanRoof | Professional Roof Cleaning Services</title>
+    <link rel="icon" href="logo_icon.png" type="image/png" />
+
+    <link rel="stylesheet" href="output.css" />
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* ===== HERO ANIMACJE ===== */
+
+      .hero-fade {
+        opacity: 0;
+        transform: translateY(25px);
+        animation: heroIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .hero-fade.d1 { animation-delay: 0.15s; }
+      .hero-fade.d2 { animation-delay: 0.4s; }
+      .hero-fade.d3 { animation-delay: 0.65s; }
+      .hero-fade.d4 { animation-delay: 0.9s; }
+
+      @keyframes heroIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Navbar wjazd */
+      .nav-reveal {
+        opacity: 0;
+        transform: translateY(-15px);
+        animation: navIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+      }
+
+      @keyframes navIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body class="p-0 bg-white">
+    <!--Navbar-->
+    <nav
+      class="nav-reveal flex items-center justify-around px-8 h-16 bg-white backdrop-blur-sm border-b border-gray-100 relative z-50"
+    >
+      <a href="/" class="text-xl font-medium text-gray-800">
+        <div class="flex items-center">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M16.0001 13.3848C16.0001 14.6088 15.526 15.7828 14.6821 16.6483C14.203 17.1397 13.6269 17.5091 13 17.7364M19 13.6923C19 7.11538 12 2 12 2C12 2 5 7.11538 5 13.6923C5 15.6304 5.7375 17.4893 7.05025 18.8598C8.36301 20.2302 10.1436 20.9994 12.0001 20.9994C13.8566 20.9994 15.637 20.2298 16.9497 18.8594C18.2625 17.4889 19 15.6304 19 13.6923Z"
+              stroke="#38bdf8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Roof <span class="text-[#38bdf8] ml-1">Cleaning</span>
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="hidden md:flex gap-8 list-none">
+        <li>
+          <a
+            href="#uslugi"
+            class="text-sm text-gray-500 hover:text-gray-800 relative group pb-0.5"
+          >
+            Usługi
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-sky-400 group-hover:w-full transition-all duration-300"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#onas"
+            class="text-sm text-gray-500 hover:text-gray-800 relative group pb-0.5"
+          >
+            O nas
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-sky-400 group-hover:w-full transition-all duration-300"
+            ></span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="#kontakt"
+            class="text-sm text-gray-500 hover:text-gray-800 relative group pb-0.5"
+          >
+            Kontakt
+            <span
+              class="absolute bottom-0 left-0 w-0 h-px bg-sky-400 group-hover:w-full transition-all duration-300"
+            ></span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Burger button -->
+      <button
+        id="burger"
+        class="md:hidden flex flex-col gap-1.5 cursor-pointer p-1"
+      >
+        <span
+          class="block w-5 h-px bg-gray-800 transition-all duration-300 origin-center"
+          id="b1"
+        ></span>
+        <span
+          class="block w-5 h-px bg-gray-800 transition-all duration-300"
+          id="b2"
+        ></span>
+        <span
+          class="block w-5 h-px bg-gray-800 transition-all duration-300 origin-center"
+          id="b3"
+        ></span>
+      </button>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobileMenu"
+        class="absolute top-16 left-0 right-0 bg-white border-b border-gray-100 px-8 py-2 flex-col md:hidden z-50"
+        style="display: none"
+      >
+        <a
+          href="#uslugi"
+          class="py-3 text-gray-500 hover:text-sky-500 border-b border-gray-100 text-sm"
+          >Usługi</a
+        >
+        <a
+          href="#onas"
+          class="py-3 text-gray-500 hover:text-sky-500 border-b border-gray-100 text-sm"
+          >O nas</a
+        >
+        <a href="#kontakt" class="py-3 text-gray-500 hover:text-sky-500 text-sm"
+          >Kontakt</a
+        >
+      </div>
+    </nav>
+
+    <!--HERO-->
+    <section
+      class="h-[calc(100vh-4rem)] w-full relative flex items-center justify-center"
+      style="
+        background-image: url(&quot;/img/hero_image.webp&quot;);
+        background-size: cover;
+        background-position: center;
+      "
+    >
+      <!-- overlay -->
+      <div class="absolute inset-0 bg-black/60"></div>
+
+      <!-- content -->
+      <div class="relative z-10 text-center text-white px-4 max-w-3xl mx-auto">
+        <p
+          class="hero-fade d1 text-sm uppercase tracking-widest text-sky-400 font-medium mb-[-10px]"
+        >
+          Professional Service
+        </p>
+        <h1 class="hero-fade d2 text-5xl md:text-7xl font-bold leading-tight">
+          Clean Roof,<br />
+          <span class="text-sky-400">Clean Home</span>
+        </h1>
+        <p class="hero-fade d3 text-lg md:text-xl text-gray-300 max-w-xl mx-auto py-4">
+          Usuwamy mech, algi i brud skutecznie i bezpiecznie. Zadbaj o swój dach
+          zanim będzie za późno.
+        </p>
+        <div class="hero-fade d4 flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <a
+            href="#"
+            class="bg-sky-400 hover:bg-sky-300 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300"
+          >
+            Get a Free Quote
+          </a>
+          <a
+            href="#"
+            class="border border-white/50 hover:border-white text-white hover:bg-white/10 font-medium px-8 py-3 rounded-full transition-all duration-300"
+          >
+            See Our Work
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!--SERVICES-->
+    <section id="uslugi" class="bg-white py-20 px-4">
+      <div class="max-w-5xl mx-auto">
+        <!-- nagłówek -->
+        <div class="text-center mb-14">
+          <p
+            class="text-sm uppercase tracking-widest text-sky-400 font-medium mb-3"
+          >
+            Co robimy
+          </p>
+          <h2 class="text-4xl font-bold text-gray-800">Nasze usługi</h2>
+          <p class="text-gray-400 mt-3 max-w-xl mx-auto">
+            Kompleksowa pielęgnacja dachu — od czyszczenia po impregnację.
+            Działamy szybko, skutecznie i bez uszkodzeń pokrycia.
+          </p>
+        </div>
+
+        <!-- mozaika -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- karta duża (lewa) -->
+          <div
+            class="relative rounded-2xl overflow-hidden md:row-span-2 h-64 md:h-auto"
+          >
+            <img
+              src="/img/roof_clean.webp"
+              alt="Czyszczenie dachu"
+              width="600"
+              height="700"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent flex flex-col justify-end p-6"
+            >
+              <h3 class="text-white font-semibold text-xl mb-1">
+                Czyszczenie dachu
+              </h3>
+              <p class="text-white/75 text-sm leading-relaxed">
+                Usuwamy mech, algi i zabrudzenia metodą niskociśnieniową —
+                bezpiecznie dla każdego pokrycia.
+              </p>
+            </div>
+          </div>
+
+          <!-- karta mała 1 (prawa góra) -->
+          <div class="relative rounded-2xl overflow-hidden h-64">
+            <img
+              src="/img/roof_impregnacja.webp"
+              alt="Impregnacja dachu"
+              width="600"
+              height="340"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent flex flex-col justify-end p-6"
+            >
+              <h3 class="text-white font-semibold text-xl mb-1">Impregnacja</h3>
+              <p class="text-white/75 text-sm leading-relaxed">
+                Chronimy dach przed wilgocią, mrozem i ponownym porastaniem na
+                lata.
+              </p>
+            </div>
+          </div>
+
+          <!-- karta mała 2 (prawa dół) -->
+          <div class="relative rounded-2xl overflow-hidden h-64">
+            <img
+              src="img//mos.webp"
+              alt="Odgrzybianie dachu"
+              width="600"
+              height="340"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent flex flex-col justify-end p-6"
+            >
+              <h3 class="text-white font-semibold text-xl mb-1">
+                Odgrzybianie
+              </h3>
+              <p class="text-white/75 text-sm leading-relaxed">
+                Likwidujemy grzyby i pleśń specjalistycznymi preparatami
+                biobójczymi.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--DLACZEGO MY-->
+      <section class="bg-white border-t border-gray-100 py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <!-- lewa: tekst -->
+            <div>
+              <p
+                class="text-sm uppercase tracking-widest text-sky-400 font-medium mb-3"
+              >
+                Dlaczego my
+              </p>
+              <h2 class="text-4xl font-bold text-gray-800 mb-5 leading-snug">
+                Profesjonalne czyszczenie dachu<br />
+                <span class="text-sky-400">bez ryzyka uszkodzeń</span>
+              </h2>
+              <p class="text-gray-400 leading-relaxed mb-8">
+                Specjalizujemy się w czyszczeniu i impregnacji dachów metodą
+                niskociśnieniową. Usuwamy mech, algi, porosty i grzyby
+                skutecznie — bez uszkadzania dachówki, blachy ani gontu.
+                Działamy na terenie całego regionu.
+              </p>
+
+              <!-- benefity -->
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1 w-5 h-5 rounded-full bg-sky-50 flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6L5 9L10 3"
+                        stroke="#38bdf8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-gray-600 text-sm leading-relaxed"
+                    ><strong class="text-gray-800"
+                      >Metoda niskociśnieniowa</strong
+                    >
+                    — bezpieczna dla każdego rodzaju pokrycia dachowego</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1 w-5 h-5 rounded-full bg-sky-50 flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6L5 9L10 3"
+                        stroke="#38bdf8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-gray-600 text-sm leading-relaxed"
+                    ><strong class="text-gray-800">Środki biobójcze</strong> —
+                    trwale eliminują mech, algi i grzyby na powierzchni
+                    dachu</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1 w-5 h-5 rounded-full bg-sky-50 flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6L5 9L10 3"
+                        stroke="#38bdf8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-gray-600 text-sm leading-relaxed"
+                    ><strong class="text-gray-800">Impregnacja ochronna</strong>
+                    — zabezpiecza dach przed wilgocią i mrozem na kolejne
+                    lata</span
+                  >
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="mt-1 w-5 h-5 rounded-full bg-sky-50 flex items-center justify-center flex-shrink-0"
+                  >
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                      <path
+                        d="M2 6L5 9L10 3"
+                        stroke="#38bdf8"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span class="text-gray-600 text-sm leading-relaxed"
+                    ><strong class="text-gray-800">Bezpłatna wycena</strong> —
+                    przyjeżdżamy, oceniamy stan dachu i wyceniamy bez
+                    zobowiązań</span
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- prawa: ikony -->
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-sky-50 rounded-2xl p-7 flex flex-col items-center justify-center gap-3 text-center"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 2C8 6 4 9.5 4 13.5C4 17.09 7.13 20 12 20C16.87 20 20 17.09 20 13.5C20 9.5 16 6 12 2Z"
+                    stroke="#38bdf8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="text-gray-700 text-sm font-medium"
+                  >Metoda niskociśnieniowa</span
+                >
+              </div>
+
+              <div
+                class="bg-gray-50 rounded-2xl p-7 flex flex-col items-center justify-center gap-3 text-center"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9 12L11 14L15 10M12 3L4 7V12C4 16.4 7.4 20.5 12 21.5C16.6 20.5 20 16.4 20 12V7L12 3Z"
+                    stroke="#94a3b8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="text-gray-700 text-sm font-medium"
+                  >Gwarancja jakości</span
+                >
+              </div>
+
+              <div
+                class="bg-gray-50 rounded-2xl p-7 flex flex-col items-center justify-center gap-3 text-center"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="#94a3b8"
+                    stroke-width="1.5"
+                  />
+                  <path
+                    d="M12 6V12L16 14"
+                    stroke="#94a3b8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <span class="text-gray-700 text-sm font-medium"
+                  >Szybka realizacja</span
+                >
+              </div>
+
+              <div
+                class="bg-sky-50 rounded-2xl p-7 flex flex-col items-center justify-center gap-3 text-center"
+              >
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z"
+                    stroke="#38bdf8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M16 3H8L6 7H18L16 3Z"
+                    stroke="#38bdf8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 12V16M10 14H14"
+                    stroke="#38bdf8"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                </svg>
+                <span class="text-gray-700 text-sm font-medium"
+                  >Bezpłatna wycena</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!--O NAS-->
+    <section id="onas" class="bg-white border-t border-gray-100 py-20 px-4">
+    <div class="max-w-5xl mx-auto">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+        <!-- zdjęcia (na mobile drugie przez order-2) -->
+        <div class="relative h-[420px] order-2 md:order-1">
+
+            <!-- zdjęcie główne (lewy dół) -->
+            <div class="absolute bottom-0 left-0 w-3/4 h-80 rounded-2xl overflow-hidden shadow-lg">
+            <img
+                src="/img/roof_team.webp"
+                alt="zespół czyszczący dach"
+                width="450"
+                height="320"
+                class="w-full h-full object-cover"
+            />
+            </div>
+
+            <!-- zdjęcie mniejsze (prawy góra, nachodzi na główne) -->
+            <div class="absolute top-0 right-0 w-1/2 h-56 rounded-2xl overflow-hidden shadow-lg ring-4 ring-white">
+            <img
+                src="/img/roof_water.webp"
+                alt="Czyszczenie dachu z bliska"
+                width="280"
+                height="224"
+                class="w-full h-full object-cover"
+            />
+            </div>
+
+            <!-- dekoracyjny kwadrat sky -->
+            <div class="absolute bottom-4 right-4 w-16 h-16 rounded-xl bg-sky-100 -z-10"></div>
+
+        </div>
+
+        <!-- tekst (na mobile pierwsze przez order-1) -->
+        <div class="order-1 md:order-2">
+            <p class="text-sm uppercase tracking-widest text-sky-400 font-medium mb-3">O nas</p>
+            <h2 class="text-4xl font-bold text-gray-800 mb-5 leading-snug">
+            Dbamy o dachy<br>
+            <span class="text-sky-400">od ponad 10 lat</span>
+            </h2>
+            <p class="text-gray-400 leading-relaxed mb-4">
+            Jesteśmy lokalną firmą specjalizującą się w profesjonalnym czyszczeniu, odgrzybianiu i impregnacji dachów. Działamy skutecznie, terminowo i z pełnym szacunkiem dla Twojej własności.
+            </p>
+            <p class="text-gray-400 leading-relaxed mb-8">
+            Każdy dach traktujemy indywidualnie — dobieramy metodę i środki pod konkretny rodzaj pokrycia. Nie zostawiamy bałaganu i zawsze kończymy pracę w ustalonym terminie.
+            </p>
+            
+            <a href="/o-nas"
+            class="inline-flex items-center gap-2 bg-sky-400 hover:bg-sky-300 text-white font-semibold px-7 py-3 rounded-full transition-all duration-300"
+            >
+            Dowiedz się więcej
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12H19M13 6L19 12L13 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        </div>
+    </div>
+    </section>
+
+    <!--FOOTER / KONTAKT-->
+    <footer id="kontakt" class="bg-gray-900 text-white">
+
+      <!-- górna część -->
+      <div class="max-w-5xl mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+          <!-- kolumna 1: logo + opis -->
+          <div>
+            <a href="/" class="inline-flex items-center gap-2 text-xl font-medium mb-4">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.0001 13.3848C16.0001 14.6088 15.526 15.7828 14.6821 16.6483C14.203 17.1397 13.6269 17.5091 13 17.7364M19 13.6923C19 7.11538 12 2 12 2C12 2 5 7.11538 5 13.6923C5 15.6304 5.7375 17.4893 7.05025 18.8598C8.36301 20.2302 10.1436 20.9994 12.0001 20.9994C13.8566 20.9994 15.637 20.2298 16.9497 18.8594C18.2625 17.4889 19 15.6304 19 13.6923Z" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Roof <span class="text-sky-400 ml-1">Cleaning</span>
+            </a>
+            <p class="text-gray-400 text-sm leading-relaxed mt-2">
+              Profesjonalne czyszczenie, odgrzybianie i impregnacja dachów. Działamy na terenie całego regionu — szybko, skutecznie i bez uszkodzeń.
+            </p>
+          </div>
+
+          <!-- kolumna 2: nawigacja -->
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-5">Nawigacja</h4>
+            <ul class="space-y-3">
+              <li>
+                <a href="#uslugi" class="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-200">Usługi</a>
+              </li>
+              <li>
+                <a href="#onas" class="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-200">O nas</a>
+              </li>
+              <li>
+                <a href="#kontakt" class="text-gray-400 hover:text-sky-400 text-sm transition-colors duration-200">Kontakt</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- kolumna 3: kontakt -->
+          <div>
+            <h4 class="text-sm font-semibold uppercase tracking-widest text-gray-300 mb-5">Kontakt</h4>
+            <ul class="space-y-4">
+
+              <!-- telefon -->
+              <li>
+                <a href="tel:+48123456789" class="flex items-center gap-3 group">
+                  <span class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-400/20 transition-colors duration-200">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M22 16.92V19.92C22 20.48 21.56 20.93 21 20.97C20.64 21 20.27 21 19.9 21C10.96 21 3 13.04 3 4.1C3 3.73 3 3.36 3.03 3C3.07 2.44 3.52 2 4.08 2H7.08C7.56 2 7.97 2.34 8.05 2.81C8.14 3.38 8.3 3.93 8.52 4.45C8.67 4.81 8.58 5.22 8.3 5.5L6.91 6.89C8.51 9.62 10.38 11.49 13.11 13.09L14.5 11.7C14.78 11.42 15.19 11.33 15.55 11.48C16.07 11.7 16.62 11.86 17.19 11.95C17.66 12.03 18 12.44 18 12.92V16.92H22Z" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-xs text-gray-500">Zadzwoń do nas</p>
+                    <p class="text-sm text-gray-300 group-hover:text-sky-400 transition-colors duration-200 font-medium">+48 123 456 789</p>
+                  </div>
+                </a>
+              </li>
+
+              <!-- email -->
+              <li>
+                <a href="mailto:kontakt@roofcleaning.pl" class="flex items-center gap-3 group">
+                  <span class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0 group-hover:bg-sky-400/20 transition-colors duration-200">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M22 6L12 13L2 6" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-xs text-gray-500">Napisz do nas</p>
+                    <p class="text-sm text-gray-300 group-hover:text-sky-400 transition-colors duration-200 font-medium">kontakt@roofcleaning.pl</p>
+                  </div>
+                </a>
+              </li>
+
+              <!-- adres -->
+              <li>
+                <div class="flex items-center gap-3">
+                  <span class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center flex-shrink-0">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <div>
+                    <p class="text-xs text-gray-500">Nasz adres</p>
+                    <p class="text-sm text-gray-300 font-medium">ul. Przykładowa 12, Warszawa</p>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- dolna belka -->
+      <div class="border-t border-gray-800">
+        <div class="max-w-5xl mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-gray-500 text-xs">&copy; 2025 Roof Cleaning. Wszelkie prawa zastrzeżone.</p>
+          <div class="flex gap-4">
+            <!-- Facebook -->
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-sky-400/20 flex items-center justify-center transition-colors duration-200">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="#" class="w-8 h-8 rounded-full bg-gray-800 hover:bg-sky-400/20 flex items-center justify-center transition-colors duration-200">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="20" height="20" rx="5" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5932 15.1514 13.8416 15.5297C13.0901 15.9079 12.2385 16.0396 11.4078 15.9059C10.577 15.7723 9.80977 15.3801 9.21485 14.7852C8.61993 14.1902 8.22774 13.423 8.09408 12.5922C7.96042 11.7615 8.09208 10.9099 8.47034 10.1584C8.8486 9.40685 9.4542 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87659 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.5 6.5H17.51" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+    <script>
+      const burger = document.getElementById("burger");
+      const menu = document.getElementById("mobileMenu");
+      const b1 = document.getElementById("b1");
+      const b2 = document.getElementById("b2");
+      const b3 = document.getElementById("b3");
+      let open = false;
+      burger.addEventListener("click", () => {
+        open = !open;
+        menu.style.display = open ? "flex" : "none";
+        b1.style.transform = open ? "translateY(6px) rotate(45deg)" : "";
+        b2.style.opacity = open ? "0" : "1";
+        b3.style.transform = open ? "translateY(-6px) rotate(-45deg)" : "";
+      });
+    </script>
+  </body>
+</html>
